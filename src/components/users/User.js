@@ -51,7 +51,8 @@ const User = ({ match }) => {
                                 <i className="fas fa-times-circle text-danger"/> 
                             )}</p>
                     <div style={{ textAlign: 'center'}}>
-                        <a href={html_url} className="btn btn-dark my-1">Visit Github Profile</a>
+                        <a href={html_url} rel="noopener noreferrer" 
+            target='_blank' className="btn btn-dark my-1">Visit Github Profile</a>
                     </div>
                 </div>
                 <div>
