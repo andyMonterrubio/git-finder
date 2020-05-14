@@ -41,7 +41,9 @@ const User = ({ match }) => {
                 <div className="all-center">
                     <img src={avatar_url} className="round-img" alt="" style={{ width: '150px'}} />
                     <h2>{name}</h2>
-                    <p><i className="fas fa-map-marker-alt"></i> {location}</p>
+                    {
+                        location && <Fragment><p><i className="fas fa-map-marker-alt"></i> {location}</p></Fragment>
+                    }
                     <p>Hireable: {' '}
                             { hireable ? ( 
                                 <i className="fas fa-check text-success"/> 
@@ -52,10 +54,10 @@ const User = ({ match }) => {
                         <a href={html_url} className="btn btn-dark my-1">Visit Github Profile</a>
                     </div>
                 </div>
-                <div style={{ paddingTop: '25px' }}>
+                <div>
                     { bio && (
                     <Fragment>
-                        <p>{bio}</p>
+                        <p><strong>About me</strong> <br /> {bio}</p>
                     </Fragment>
                     )}
                     <br />
@@ -67,7 +69,7 @@ const User = ({ match }) => {
                         </li>
                         <li>
                             { company && <Fragment>
-                                <i className="fas fa-users"></i> {company}
+                                <i className="fas fa-user-friends"></i> {company}
                             </Fragment>}
                         </li>
                         <li>
@@ -78,10 +80,10 @@ const User = ({ match }) => {
                     </ul>
 
                     <div className="text-center" style={{ margin: '1rem 0' }}>
-                        <div className="badge badge-primary">Followers: {followers} </div>
-                        <div className="badge badge-success">Following: {following} </div>
-                        <div className="badge badge-light">Public Repos: {public_repos} </div>
-                        <div className="badge badge-dark">Public Gists: {public_gists} </div>
+                        <div className="badge">Followers: {followers} </div>
+                        <div className="badge">Following: {following} </div>
+                        <div className="badge">Public Repos: {public_repos} </div>
+                        <div className="badge">Public Gists: {public_gists} </div>
                     </div>
 
                     
