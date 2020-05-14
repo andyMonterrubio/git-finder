@@ -13,6 +13,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition-property: all;
+  transition-duration: .6s;
+  transition-timing-function: ease;
 }
 
 body {
@@ -98,6 +101,10 @@ img {
   text-align: left;
 }
 
+i {
+  padding-right: 5px;
+}
+
 /* Center All */
 .all-center {
   display: flex;
@@ -112,7 +119,21 @@ img {
 /* Cards */
 .card {
   padding: 1rem;
-  border: #ccc 1px dotted;
+  border: 1px solid #ccccccc7;
+  margin: 0.7rem 0;
+  border-radius: 0.25rem;
+  box-shadow: 0px 3px 6px #ccccccc7, 0px 3px 6px #ccccccc7;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 8px 4px #ccc;
+  transform: scale(1) translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+.section {
+  padding: 1rem;
+  border: 1px solid #ccc;
   margin: 0.7rem 0;
 }
 
@@ -196,6 +217,7 @@ img {
   grid-gap: 1rem;
 }
 
+/* Buttons */
 .btn {
   display: inline-block;
   background: var(--light-color);
@@ -242,6 +264,7 @@ img {
   margin: 1rem 0;
   opacity: 0.9;
   background: var(--light-color);
+  border-radius: 5px;
   color: #333;
 }
 
@@ -307,6 +330,56 @@ img {
   border-radius: 50%;
 }
 
+.btn-container{
+  text-align: center; 
+  display: inherit;
+}
+
+.btn-anim {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  min-width: 85px;
+}
+
+.btn-hover {
+  letter-spacing: 0;
+}
+
+.btn-hover:hover,
+.btn-hover:active {
+letter-spacing: 1px;
+}
+
+.btn-hover:after,
+.btn-hover:before {
+backface-visibility: hidden;
+border: 1px solid #fff;
+border-color: transparent;
+bottom: 0px;
+content: " ";
+display: block;
+margin: 0 auto;
+position: relative;
+transition: all 280ms ease-in-out;
+width: 0;
+}
+
+.btn-hover:hover:after,
+.btn-hover:hover:before {
+backface-visibility: hidden;
+border-color: #fff;
+transition: width 350ms ease-in-out;
+width: 70%;
+}
+
+.btn-hover:hover:before {
+bottom: auto;
+top: 0;
+width: 70%;
+}
+
 /* Forms */
 input {
   margin: 1.2rem 0;
@@ -334,6 +407,7 @@ textarea {
 input[type='submit'],
 button {
   font: inherit;
+  margin: 1.2rem 0;
 }
 
 table th,
@@ -364,8 +438,6 @@ table th {
 
 .navbar a {
   color: #fff;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
 }
 
 .navbar a:hover {
@@ -410,5 +482,9 @@ table th {
   .navbar ul {
     text-align: center;
     justify-content: center;
+  }
+
+  .btn-container{
+    display: inline-flex;
   }
 }
