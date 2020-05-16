@@ -125,6 +125,7 @@ i {
   margin: 0.7rem 0;
   border-radius: 0.25rem;
   box-shadow: 0px 3px 6px #ccccccc7, 0px 3px 6px #ccccccc7;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
@@ -421,6 +422,14 @@ input[type='submit'],
 button {
   font: inherit;
   margin: 1.2rem 0;
+  display: inline-block;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  border-radius: 0.25rem;
 }
 
 table th,
@@ -586,11 +595,18 @@ a.home-link {
 }
 
 /* Footer */
+.about{
+  position: relative;
+  min-height: 90vh;
+}
+
 footer {
   position:absolute;
-   bottom:0;
-   width:85%;
-   height:50px;   /* Height of the footer */
+  bottom:0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 15px 0px;
+  height: 40px;
 }
 
 .mobile{
@@ -639,5 +655,8 @@ footer {
 
   .btn-container{
     display: inline-flex;
+  }
+  .about{
+    min-height: 100vh;
   }
 }
