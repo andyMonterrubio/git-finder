@@ -24,10 +24,10 @@ const Search = () => {
         <div>
             <form onSubmit={onSubmit} className="form">
                 <input type="text" name="text" placeholder="Search Users..." value={text} onChange={onChange} />
-                    <input type="submit" value="Search" className="btn btn-dark btn-block" />
+                    <button type="submit" className="btn-dark"><i className="fas fa-search"></i></button>
             </form>
             { githubContext.users.length > 0 && 
-                ( <button className="btn btn-light btn-block" onClick={githubContext.clearUsers}>Clear</button>)
+                ( <button className="btn btn-light btn-block" onClick={githubContext.clearUsers} style={{ margin: '2rem auto', width: '20%'}}>Clear Results</button>)
             }
             
         </div>
