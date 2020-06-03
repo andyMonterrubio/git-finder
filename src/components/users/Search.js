@@ -21,12 +21,22 @@ const Search = () => {
         }
     }
 
+    const onFocus = () => document.getElementById("animation").classList = "input-container";
+
+    const onFocusOut = () => {
+        let input = document.getElementById("text");
+        if(input.value.length === 0)
+            document.getElementById("animation").classList = "input-container input-text-animation";
+    }
+
     return (
         <div>
             <div className="wrap">
                 <div className="search">
                     <form onSubmit={onSubmit} >
-                        <input type="text" name="text" placeholder="Type a username or name..." className="searchTerm" value={text} onChange={onChange} />
+                        <div id="animation" className="input-container input-text-animation">
+                            <input id="text" type="text" name="text" className="searchTerm" value={text} onChange={onChange} onFocus={onFocus} onBlur={onFocusOut} />
+                        </div>
                         <button type="submit" className="searchButton"><i className="fa fa-search"></i></button>
                     </form>
                 </div>

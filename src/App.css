@@ -675,6 +675,78 @@ button.clear{
   margin: 2rem 0px;
 }
 
+.input-container{
+  width: 100%;
+  display:inline-block;
+}
+
+.input-text-animation:after{
+  content:"";
+  position:absolute;
+  top: 9px;
+  left:18px;
+  color: gray;
+  animation: typing 6s ease infinite;
+}
+
+.input-text-animation:before{
+  content:"";
+  position:absolute;
+  left: 12px;
+  top: 12px;
+  width: 1px;
+  height: 17px;
+  background-color: gray;
+  animation:blink .4s ease infinite, cursor 6s ease infinite;
+}
+
+@keyframes blink{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+
+@keyframes cursor{
+  0%{transform:translateX(0px)}
+  3%{transform:translateX(15px)}
+  6%{transform:translateX(25px)}
+  9%{transform:translateX(35px)}
+  12%{transform:translateX(45px)}
+  15%{transform:translateX(57px)} 
+  18%{transform:translateX(73px)}
+  21%{transform:translateX(81px)}
+  24%{transform:translateX(90px)}
+  27%{transform:translateX(97px)} /*r*/ 
+  30%{transform:translateX(107px)}
+  33%{transform:translateX(117px)}
+  36%{transform:translateX(134px)}
+  39%{transform:translateX(144px)}
+  42%{transform:translateX(147px)}
+  45%{transform:translateX(150px)}
+  50%{transform:translateX(153px)}
+  100%{transform:translateX(153px)}
+}
+
+@keyframes typing{
+  0%{content:"";}
+  3%{content:"T"}
+  6%{content:"Ty"}
+  9%{content:"Typ"}
+  12%{content:"Type"}
+  15%{content:"Type a"}
+  18%{content:"Type a u"}
+  21%{content:"Type a us"}
+  24%{content:"Type a use"}
+  27%{content:"Type a user"}
+  30%{content:"Type a usern"}
+  33%{content:"Type a userna"}
+  36%{content:"Type a usernam"}
+  39%{content:"Type a username"}
+  42%{content:"Type a username."}
+  45%{content:"Type a username.."}
+  50%{content:"Type a username..."}
+  100%{content:"Type a username..."}
+}
+
 
 /* Mobile Styles */
 @media (max-width: 700px) {
