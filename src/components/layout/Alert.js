@@ -9,7 +9,7 @@ const Alert = () => {
     return (
         alert !== null && (
             <div className={`alert alert-${alert.type}`}>
-                <i className="fas fa-info-circle" style={{ paddingRight: '10px' }} />{alert.msg}
+                <i className="fas fa-info-circle faa-pulse animated" style={{ paddingRight: '10px' }} />{alert.msg}
             </div>
         )
     )

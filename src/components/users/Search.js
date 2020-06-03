@@ -14,6 +14,7 @@ const Search = () => {
         e.preventDefault()
         if(text === ''){
             alertContext.setAlert('Please enter a username', 'light')
+            githubContext.hideNoUsers();
         } else {
             githubContext.searchUsers(text);
             setText('');
@@ -22,10 +23,23 @@ const Search = () => {
 
     return (
         <div>
-            <form onSubmit={onSubmit} className="form">
-                <input type="text" name="text" placeholder="Search Users..." value={text} onChange={onChange} />
-                    <button type="submit" className="btn-dark"><i className="fas fa-search"></i></button>
-            </form>
+            <div className="wrap">
+                <div className="search">
+                    <form onSubmit={onSubmit} >
+                        <input type="text" name="text" placeholder="Type a username or name..." className="searchTerm" value={text} onChange={onChange} />
+                        <button type="submit" className="searchButton"><i className="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+
+
+            {
+                githubContext.noUsers === true &&
+                <div className="alert alert-dark">
+                    <i className="fas fa-info-circle faa-pulse animated" style={{ paddingRight: '10px' }} />No users have been found
+                </div>
+            }
+
             { githubContext.users.length > 0 && 
                 ( <button className="btn btn-light btn-block clear" onClick={githubContext.clearUsers}>Clear Results</button>)
             }
