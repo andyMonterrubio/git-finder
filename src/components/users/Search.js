@@ -44,7 +44,7 @@ const Search = () => {
 
 
             {
-                githubContext.noUsers === true &&
+                githubContext.noUsers === true && githubContext.users.length === 0 &&
                 <div className="alert alert-dark">
                     <i className="fas fa-info-circle faa-pulse animated" style={{ paddingRight: '10px' }} />No users have been found
                 </div>

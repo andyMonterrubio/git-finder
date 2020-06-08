@@ -207,18 +207,21 @@ i {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+  margin-bottom: 30px;
 }
 
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
+  margin-bottom: 30px;
 }
 
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
+  margin-bottom: 30px;
 }
 
 /* Buttons */
@@ -766,6 +769,7 @@ button.clear{
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
+    margin-bottom: 30px;
   }
 
   /* Text Styles */
